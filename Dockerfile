@@ -6,4 +6,4 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     dos2unix jq
 
-RUN gem install foodcritic
+RUN gem install foodcritic berkshelf
