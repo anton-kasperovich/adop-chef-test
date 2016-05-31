@@ -1,5 +1,7 @@
 FROM ruby:2.3.1-alpine
 
+MAINTAINER Anton Kasperovich <anton.kaspiarovich@accenture.com>
+
 # Install system packages
 RUN apk add --update \
         bash \
