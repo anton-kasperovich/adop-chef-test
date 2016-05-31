@@ -1,9 +1,19 @@
-FROM ruby:2.3
+FROM ruby:2.3.1-alpine
 
-MAINTAINER Mark Rendell, <mark.rendell@accenture.com>
+# Install system packages
+RUN apk add --update \
+        bash \
+		build-base \
+        libxml2-dev \
+        libxslt-dev \
+        zlib-dev && \
+		rm -rf /var/cache/apk/*
 
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-    dos2unix jq
+# Install NokoGiri separatelly with system libraries usage
+RUN gem install nokogiri -- --use-system-libraries
 
-RUN gem install foodcritic berkshelf rsync
+# Install gem dependencies
+RUN gem install foodcritic \
+    berkshelf \
+    chefspec \
+    rsync
