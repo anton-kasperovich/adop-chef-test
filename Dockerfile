@@ -15,7 +15,8 @@ RUN apk add --update \
 RUN gem install nokogiri -- --use-system-libraries
 
 # Install gem dependencies
-RUN gem install foodcritic \
+RUN gem install --no-ri --no-rdoc \
+    foodcritic \
     berkshelf \
     chefspec \
     rsync
