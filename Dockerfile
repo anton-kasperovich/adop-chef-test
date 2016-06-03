@@ -18,6 +18,7 @@ RUN gem install --no-ri --no-rdoc nokogiri -- --use-system-libraries
 
 # Install gem dependencies
 RUN gem install --no-ri --no-rdoc \
+    cookstyle \
     foodcritic \
     berkshelf \
     chefspec \
